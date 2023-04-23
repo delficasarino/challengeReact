@@ -4,7 +4,7 @@ import "./styles/flexbox.css";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
       <Main />
     </div>
