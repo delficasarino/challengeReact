@@ -26,3 +26,8 @@
   width: 2rem;
   border-radius: 100%;
 }
+
+.page-item a[aria-label="Go to first page"],
+.page-item a[aria-label="Go to last page"] {
+  display: none;
+}

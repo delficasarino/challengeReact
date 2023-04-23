@@ -132,3 +132,15 @@ main section ul.selected article {
 main section ul.selected article li {
   margin-bottom: 0.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  main form {
+    height: 8vh;
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  main form button {
+    width: 30%;
+  }
+}
