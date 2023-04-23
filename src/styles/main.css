@@ -1,0 +1,134 @@
+main {
+  width: 100%;
+}
+
+/*Loader*/
+.loader {
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  z-index: 999;
+}
+
+.loader:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 8%;
+  height: 8%;
+  border-radius: 50%;
+  border: 0.5rem solid #ccc;
+  border-top-color: rgb(7, 7, 100);
+  animation: loader 0.9s linear infinite;
+}
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Form*/
+main form {
+  height: 10vh;
+  width: 50%;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+main form input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #bebac9;
+  border-radius: 0 1rem 1rem 0;
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+main form button {
+  height: 100%;
+  width: 10%;
+  position: absolute;
+  right: -1.2rem;
+  top: 0;
+  border: none;
+  background-color: #352069;
+  color: snow;
+  font-size: 1.5rem;
+  border-radius: 0 1rem 1rem 0;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+main form button:hover {
+  background-color: #7b46ff;
+  transition: all ease-in-out 0.5s;
+}
+
+/*Books List*/
+.title {
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-weight: bold;
+  width: 100%;
+}
+main section {
+  width: 100%;
+}
+
+main section ul {
+  list-style: none;
+  width: 90%;
+}
+
+main section ul.list {
+  background-color: rgb(7, 7, 100);
+  color: snow;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+main section ul.list:hover {
+  background-color: rgb(74, 74, 133);
+  transition: all ease-in-out 0.5s;
+}
+
+main section ul.selected {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: space-around;
+}
+
+main section ul.selected img {
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+main section ul.selected article {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+main section ul.selected article li {
+  margin-bottom: 0.5rem;
+}

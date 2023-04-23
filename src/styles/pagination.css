@@ -1,0 +1,28 @@
+.page-item {
+  list-style: none;
+  color: rgb(7, 7, 100);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+}
+
+.page-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: snow;
+  text-decoration: none;
+  background-color: rgb(7, 7, 100);
+  padding: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+}
