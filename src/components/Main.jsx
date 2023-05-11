@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaWindowClose } from "react-icons/fa";
 import "../styles/main.css";
 import Pagination from "react-js-pagination";
 import "../styles/pagination.css";
@@ -8,17 +8,17 @@ const url = "https://openlibrary.org";
 
 async function getBooks(search) {
   let endpoint = `${url}/search.json?q=${search}`;
-  return await (await fetch(endpoint)).json();
+  return (await fetch(endpoint)).json();
 }
 
 async function getWork(key) {
   let endpoint = `${url}${key}.json`;
-  return await (await fetch(endpoint)).json();
+  return (await fetch(endpoint)).json();
 }
 
 async function getAuthor(key) {
   let endpoint = `${url}/authors/${key}.json`;
-  return await (await fetch(endpoint)).json();
+  return (await fetch(endpoint)).json();
 }
 
 function Main() {
@@ -26,18 +26,9 @@ function Main() {
   const [search, setSearch] = useState("");
   const [selected, setSelected] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [loadingSelected, setLoadingSelected] = useState(false);
 
   const [activePage, setActivePage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
-
-  useEffect(() => {
-    (async () => {
-      const books = await getBooks(search, activePage);
-      setLoading(false);
-      setBooks(books);
-    })();
-  }, [search, activePage]);
 
   const submit = (e) => {
     e.preventDefault();
@@ -47,14 +38,22 @@ function Main() {
     const { value } = search;
     if (value && value.length > 2) {
       setSearch(String(value).toLowerCase().trim().split(" ").join("+"));
+      setActivePage(1);
+      setSelected(null);
     }
   };
-
+  useEffect(() => {
+    (async () => {
+      const books = await getBooks(search, activePage);
+      setLoading(false);
+      setBooks(books);
+    })();
+  }, [search, activePage]);
   const selectBook = async (book) => {
-    setLoadingSelected(true);
+    setLoading(true);
     const work = await getWork(book.key);
     const author = await getAuthor(book.author_key);
-    setLoadingSelected(false);
+    setLoading(false);
     setSelected({ book, work, author });
   };
 
@@ -74,24 +73,40 @@ function Main() {
           <FaSearch />
         </button>
       </form>
-      <section>{loading && <span className="loader"></span>}</section>
+
+      {loading && (
+        <section className="loading">
+          <span className="loader"></span>
+        </section>
+      )}
+
       {currentItems && currentItems?.length > 0 && (
         <section className="df cl jcc">
           {currentItems.map((book) => (
             <ul
               onClick={() => selectBook(book)}
-              className={
-                selected && selected?.book?.key === book?.key
-                  ? "selected"
-                  : "list"
-              }
+              className="list"
               key={book?.key ? book?.key : selected?.book?.title}
             >
-              <section>
-                {loadingSelected && <span className="loader"></span>}
-              </section>
-              {selected && selected?.book?.key == book?.key ? (
-                <>
+              <li className="title">{book?.title}</li>
+              <li>Author: {book?.author_name}</li>
+              <li>First Publish Year: {book?.first_publish_year}</li>
+            </ul>
+          ))}
+        </section>
+      )}
+
+      {currentItems && currentItems?.length > 0 && (
+        <>
+          {currentItems.map(
+            (book) =>
+              selected &&
+              selected?.book?.key == book?.key && (
+                <ul className="selected">
+                  <FaWindowClose
+                    onClick={() => setSelected(null)}
+                    className="close"
+                  />
                   {selected?.work?.covers && (
                     <img
                       src={`https://covers.openlibrary.org/b/id/${selected?.work?.covers[0]}-L.jpg`}
@@ -119,18 +134,12 @@ function Main() {
                         : selected?.author?.bio}
                     </li>
                   </article>
-                </>
-              ) : (
-                <>
-                  <li className="title">{book?.title}</li>
-                  <li>Author: {book?.author_name}</li>
-                  <li>First Publish Year: {book?.first_publish_year}</li>
-                </>
-              )}
-            </ul>
-          ))}
-        </section>
+                </ul>
+              )
+          )}
+        </>
       )}
+
       {currentItems && currentItems.length > 0 ? (
         <Pagination
           activePage={activePage}
