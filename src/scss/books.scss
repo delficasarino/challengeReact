@@ -14,26 +14,26 @@ section {
     transition: all ease-in-out 0.5s;
     margin: 0 auto;
     margin-bottom: 1rem;
+    .book-list__title {
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-weight: bold;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    .book-list__author {
+      font-style: italic;
+      width: 100%;
+    }
+    .book-list__publish-year {
+      font-size: 0.9rem;
+      width: 100%;
+    }
   }
-  .book-list:hover {
-    background-color: $background-color;
-    transition: all ease-in-out 0.5s;
-    color: $color;
-    transform: scale(1.02);
-  }
-  .book-list__title {
-    text-transform: uppercase;
-    text-decoration: underline;
-    font-weight: bold;
-    width: 100%;
-    margin-bottom: 0.5rem;
-  }
-  .book-list__author {
-    font-style: italic;
-    width: 100%;
-  }
-  .book-list__publish-year {
-    font-size: 0.9rem;
-    width: 100%;
-  }
+}
+.book-list:hover {
+  background-color: $background-color;
+  transition: all ease-in-out 0.5s;
+  color: $color;
+  transform: scale(1.02);
 }

@@ -14,14 +14,6 @@
   width: 65%;
   padding: 1rem;
   color: $color;
-  .book-selected__text {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    li {
-      margin-bottom: 0.3rem;
-    }
-  }
   .book-selected__image {
     width: 20%;
     display: flex;
@@ -30,19 +22,28 @@
     align-self: center;
     border: $color solid 0.2rem;
   }
-  .book-selected__title {
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+  .book-selected__text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    li {
+      margin-bottom: 0.3rem;
+    }
+    .book-selected__title {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .book-selected__first-publish-year {
+      font-style: italic;
+    }
+    .book-selected__description {
+      width: 100%;
+      word-wrap: break-word;
+    }
   }
-  .book-selected__first-publish-year {
-    font-style: italic;
-  }
-  .book-selected__description {
-    width: 100%;
-    word-wrap: break-word;
-  }
+
   .close {
     color: $color;
     font-size: 1.8rem;
