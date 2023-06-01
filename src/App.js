@@ -1,13 +1,27 @@
 import Header from "./components/Header";
 import Main from "./components/Main";
+import BooksProvider from "./provider/BooksProvider";
+import LoaderProvider from "./provider/LoaderProvider";
+import PaginationProvider from "./provider/PaginationProvider";
+import SearchProvider from "./provider/SearchProvider";
+import SelectedProvider from "./provider/SelectedProvider";
+
 import "./styles/flexbox.css";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Main />
-    </div>
+    <LoaderProvider>
+      <SearchProvider>
+        <PaginationProvider>
+          <BooksProvider>
+            <SelectedProvider>
+              <Header />
+              <Main />
+            </SelectedProvider>
+          </BooksProvider>
+        </PaginationProvider>
+      </SearchProvider>
+    </LoaderProvider>
   );
 }
 
