@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/challengeReact/static/css/main.5cf4c0bd.css",
-    "main.js": "/challengeReact/static/js/main.43090c8b.js",
+    "main.js": "/challengeReact/static/js/main.f6abe5b8.js",
     "static/js/787.f0962bd6.chunk.js": "/challengeReact/static/js/787.f0962bd6.chunk.js",
     "index.html": "/challengeReact/index.html",
     "main.5cf4c0bd.css.map": "/challengeReact/static/css/main.5cf4c0bd.css.map",
-    "main.43090c8b.js.map": "/challengeReact/static/js/main.43090c8b.js.map",
+    "main.f6abe5b8.js.map": "/challengeReact/static/js/main.f6abe5b8.js.map",
     "787.f0962bd6.chunk.js.map": "/challengeReact/static/js/787.f0962bd6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5cf4c0bd.css",
-    "static/js/main.43090c8b.js"
+    "static/js/main.f6abe5b8.js"
   ]
 }
