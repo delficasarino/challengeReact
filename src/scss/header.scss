@@ -1,7 +1,14 @@
 @import "./vars";
 
-header h1 {
-  color: $background-color;
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
+header.header {
+  .header__title {
+    color: $background-color;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    cursor: pointer;
+  }
 }
