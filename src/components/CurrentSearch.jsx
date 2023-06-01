@@ -19,8 +19,11 @@ const CurrentSearch = () => {
     const { elements } = e.target;
     const { keyWord } = elements;
     const { value } = keyWord;
-    if (value && value.length > 2) {
-      setSearch(String(value).toLowerCase().trim().split(" ").join("+"));
+
+    const word = String(value).toLowerCase().trim();
+
+    if (value && word.length > 2) {
+      setSearch(word.split(" ").join("+"));
       setActivePage(1);
       setSelected(null);
       setShowErrorMessage(false);
@@ -35,6 +38,7 @@ const CurrentSearch = () => {
 
   const errorMessage =
     "You must enter more than 2 letters to perform the search";
+
   return (
     <form onSubmit={submit} className="search-form">
       <input
