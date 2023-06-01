@@ -33,6 +33,10 @@ main form.search-form {
     background-color: #7b46ff;
     transition: all ease-in-out 0.5s;
   }
+  .search-form__error-message {
+    color: red;
+    font-weight: 600;
+  }
 }
 
 @media screen and (max-width: 768px) {

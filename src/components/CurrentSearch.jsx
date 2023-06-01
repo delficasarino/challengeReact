@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import SearchContext from "../context/SearchContext";
 import SelectedContext from "../context/SelectedContext";
@@ -11,6 +11,7 @@ const CurrentSearch = () => {
   const { setSelected } = useContext(SelectedContext);
   const { setActivePage } = useContext(PaginationContext);
   const { setLoader } = useContext(LoaderContext);
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
 
   const submit = async (e) => {
     e.preventDefault();
@@ -22,10 +23,17 @@ const CurrentSearch = () => {
       setSearch(String(value).toLowerCase().trim().split(" ").join("+"));
       setActivePage(1);
       setSelected(null);
+      setShowErrorMessage(false);
+      keyWord.value = "";
     } else {
+      setShowErrorMessage(true);
+      keyWord.value = "";
       setLoader(false);
     }
   };
+
+  const errorMessage =
+    "You must enter more than 2 letters to perform the search";
   return (
     <form onSubmit={submit} className="search-form">
       <input
@@ -37,6 +45,9 @@ const CurrentSearch = () => {
       <button type="submit" className="search-form__button">
         <FaSearch />
       </button>
+      {showErrorMessage && (
+        <span className="search-form__error-message">{errorMessage}</span>
+      )}
     </form>
   );
 };
