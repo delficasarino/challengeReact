@@ -22,6 +22,8 @@ const CurrentSearch = () => {
       setSearch(String(value).toLowerCase().trim().split(" ").join("+"));
       setActivePage(1);
       setSelected(null);
+    } else {
+      setLoader(false);
     }
   };
   return (
