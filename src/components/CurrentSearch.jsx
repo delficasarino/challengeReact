@@ -29,6 +29,7 @@ const CurrentSearch = () => {
       setShowErrorMessage(true);
       keyWord.value = "";
       setLoader(false);
+      setSearch("");
     }
   };
 
