@@ -28,10 +28,10 @@ main form.search-form {
     border-radius: 0 1rem 1rem 0;
     cursor: pointer;
     transition: all ease-in-out 0.5s;
-  }
-  .search-form__button:hover {
-    background-color: #7b46ff;
-    transition: all ease-in-out 0.5s;
+    &:hover {
+      background-color: #7b46ff;
+      transition: all ease-in-out 0.5s;
+    }
   }
   .search-form__error-message {
     color: red;

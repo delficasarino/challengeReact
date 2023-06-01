@@ -12,23 +12,23 @@
     width: 10rem;
     height: 10rem;
     position: relative;
-  }
-  .loader__spin:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
-  .loader__spin:after {
-    content: "";
-    position: absolute;
-    top: 10rem;
-    left: 45%;
-    width: 8%;
-    height: 8%;
-    border-radius: 50%;
-    border: 0.5rem solid #ccc;
-    border-top-color: $background-color;
-    animation: loader 0.9s linear infinite;
+    &:before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 10rem;
+      left: 45%;
+      width: 8%;
+      height: 8%;
+      border-radius: 50%;
+      border: 0.5rem solid #ccc;
+      border-top-color: $background-color;
+      animation: loader 0.9s linear infinite;
+    }
   }
 }
 

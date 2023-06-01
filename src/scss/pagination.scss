@@ -28,10 +28,10 @@
       margin: 0 0.2rem;
       transition: ease-in-out 0.3s all;
       font-weight: bold;
-    }
-    a:hover {
-      transform: scale(1.1);
-      transition: ease-in-out 0.3s all;
+      &:hover {
+        transform: scale(1.1);
+        transition: ease-in-out 0.3s all;
+      }
     }
     a[aria-label="Go to first page"],
     a[aria-label="Go to last page"] {

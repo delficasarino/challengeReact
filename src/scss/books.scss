@@ -29,11 +29,11 @@ section {
       font-size: 0.9rem;
       width: 100%;
     }
+    &:hover {
+      background-color: $background-color;
+      transition: all ease-in-out 0.5s;
+      color: $color;
+      transform: scale(1.02);
+    }
   }
-}
-.book-list:hover {
-  background-color: $background-color;
-  transition: all ease-in-out 0.5s;
-  color: $color;
-  transform: scale(1.02);
 }
