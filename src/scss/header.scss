@@ -1,5 +1,7 @@
+@import "./vars";
+
 header h1 {
-  color: rgb(7, 7, 100);
+  color: $background-color;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
 }

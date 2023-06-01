@@ -4,6 +4,7 @@ import SearchContext from "../context/SearchContext";
 import SelectedContext from "../context/SelectedContext";
 import PaginationContext from "../context/PaginationContext";
 import LoaderContext from "../context/LoaderContext";
+import "../scss/search.scss";
 
 const CurrentSearch = () => {
   const { setSearch } = useContext(SearchContext);
@@ -24,9 +25,14 @@ const CurrentSearch = () => {
     }
   };
   return (
-    <form onSubmit={submit}>
-      <input type="text" name="keyWord" id="keyWord" />
-      <button type="submit">
+    <form onSubmit={submit} className="search-form">
+      <input
+        type="text"
+        name="keyWord"
+        id="keyWord"
+        className="search-form__input"
+      />
+      <button type="submit" className="search-form__button">
         <FaSearch />
       </button>
     </form>

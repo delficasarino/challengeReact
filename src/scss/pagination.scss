@@ -1,0 +1,40 @@
+@import "./vars";
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  justify-content: center;
+  .page-item {
+    list-style: none;
+    color: $background-color;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $background-color;
+      text-decoration: none;
+      border: $background-color solid 0.2rem;
+      padding: 0.5rem;
+      height: 2rem;
+      width: 2rem;
+      border-radius: 100%;
+      margin: 0 0.2rem;
+      transition: ease-in-out 0.3s all;
+      font-weight: bold;
+    }
+    a:hover {
+      transform: scale(1.1);
+      transition: ease-in-out 0.3s all;
+    }
+    a[aria-label="Go to first page"],
+    a[aria-label="Go to last page"] {
+      display: none;
+    }
+  }
+}

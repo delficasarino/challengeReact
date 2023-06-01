@@ -4,7 +4,7 @@ import PaginationContext from "../context/PaginationContext";
 import BooksContext from "../context/BooksContext";
 import SelectedContext from "../context/SelectedContext";
 import LoaderContext from "../context/LoaderContext";
-import "../styles/main.css";
+import "../scss/books.scss";
 
 const url = "https://openlibrary.org";
 
@@ -29,7 +29,7 @@ const Books = () => {
     useContext(PaginationContext);
   const { books, setBooks } = useContext(BooksContext);
   const { selected, setSelected } = useContext(SelectedContext);
-  const { setLoader, loader } = useContext(LoaderContext);
+  const { setLoader } = useContext(LoaderContext);
 
   useEffect(() => {
     (async () => {
@@ -64,12 +64,14 @@ const Books = () => {
         currentItems.map((book) => (
           <ul
             onClick={() => selectBook(book)}
-            className="list"
+            className="book-list"
             key={book?.key ? book?.key : selected?.book?.title}
           >
-            <li className="title">{book?.title}</li>
-            <li>Author: {book?.author_name}</li>
-            <li>First Publish Year: {book?.first_publish_year}</li>
+            <li className="book-list__title">{book?.title}</li>
+            <li className="book-list__author">Author: {book?.author_name}</li>
+            <li className="book-list__publish-year">
+              First Publish Year: {book?.first_publish_year}
+            </li>
           </ul>
         ))}
     </section>

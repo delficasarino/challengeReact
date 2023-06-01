@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import "../styles/main.css";
 import CurrentSearch from "./CurrentSearch";
 import CurrentPagination from "./CurrentPagination";
 import Books from "./Books";
 import Selected from "./Selected";
+import Loader from "./Loader";
 import LoaderContext from "../context/LoaderContext";
 import PaginationContext from "../context/PaginationContext";
+import "../scss/loader.scss";
 
 function Main() {
   const { loader } = useContext(LoaderContext);
@@ -13,11 +14,9 @@ function Main() {
   return (
     <main className="df rw wp jcc aic">
       <CurrentSearch />
-      {loader && (
-        <section className="loading">
-          <span className="loader"></span>
-        </section>
-      )}
+
+      {loader && <Loader />}
+
       {<Books />}
 
       {<Selected />}

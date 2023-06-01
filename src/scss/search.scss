@@ -1,0 +1,47 @@
+@import "./vars";
+
+main form.search-form {
+  height: 10vh;
+  width: 50%;
+  position: relative;
+  margin-bottom: 2rem;
+  .search-form__input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #ccc;
+    border-radius: 0 1rem 1rem 0;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+  }
+  .search-form__button {
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    right: -1.2rem;
+    top: 0;
+    border: none;
+    background-color: $background-color;
+    color: $color;
+    font-size: 1.5rem;
+    border-radius: 0 1rem 1rem 0;
+    cursor: pointer;
+    transition: all ease-in-out 0.5s;
+  }
+  .search-form__button:hover {
+    background-color: #7b46ff;
+    transition: all ease-in-out 0.5s;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main form.search-form {
+    height: 8vh;
+    width: 90%;
+    margin-bottom: 2rem;
+    .search-form__button {
+      width: 30%;
+    }
+  }
+}

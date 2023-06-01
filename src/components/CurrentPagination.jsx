@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import Pagination from "react-js-pagination";
-import "../styles/pagination.css";
 import PaginationContext from "../context/PaginationContext";
 import BooksContext from "../context/BooksContext";
+import "../scss/pagination.scss";
 
 const CurrentPagination = () => {
   const { activePage, setActivePage, itemsPerPage } =

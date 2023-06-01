@@ -3,7 +3,7 @@ import PaginationContext from "../context/PaginationContext";
 
 const PaginationProvider = ({ children }) => {
   const [activePage, setActivePage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
   const [currentItems, setCurrentItems] = useState([]);
 
   return (

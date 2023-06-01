@@ -6,7 +6,7 @@ import PaginationProvider from "./provider/PaginationProvider";
 import SearchProvider from "./provider/SearchProvider";
 import SelectedProvider from "./provider/SelectedProvider";
 
-import "./styles/flexbox.css";
+import "./scss/flexbox.scss";
 
 function App() {
   return (
