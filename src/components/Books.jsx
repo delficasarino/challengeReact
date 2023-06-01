@@ -37,7 +37,7 @@ const Books = () => {
       setLoader(false);
       setBooks(result);
     })();
-  }, [search, activePage]);
+  }, [search, activePage, setBooks, setLoader]);
 
   useEffect(() => {
     (async () => {
@@ -47,7 +47,7 @@ const Books = () => {
         books?.docs && books?.docs?.slice(indexOfFirstItem, indexOfLastItem);
       setCurrentItems(items);
     })();
-  }, [search, currentItems]);
+  }, [search, activePage, itemsPerPage, setCurrentItems, books?.docs]);
 
   const selectBook = async (book) => {
     setLoader(true);
