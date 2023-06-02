@@ -28,6 +28,7 @@ const CurrentSearch = () => {
       setSelected(null);
       setShowErrorMessage(false);
       keyWord.value = "";
+      localStorage.setItem("key", word);
     } else {
       setShowErrorMessage(true);
       keyWord.value = "";
